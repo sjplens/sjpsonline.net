@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio José Plens da Silva - Cartão de Apresentação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+            height: 95%;
+            background: lightgrey;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            box-sizing: border-box;
+			font-size: 0.8em;
+        }
+        header {
+            grid-column: span 3;
+            text-align: center;
+            background-color: #0066CC;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        header img {
+            height: 15%;
+            height: 15%;
+        }
+        header p {
+            margin: 5px 0 0 0;
+        }
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .apresentacao {
+            grid-column: 1 / 2;
+        }
+        .ilustracao {
+            grid-column: 2 / 3;
+        }
+        .contato {
+            grid-column: 3 / 4;
+        }
+        .descricao {
+            grid-column: span 3;
+        }
+        .cta {
+            grid-column: span 3;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #0066CC;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        h2 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+
+            <h1>Sergio José Plens da Silva</h1>
+            <p>Analista de TI  | Cibersegurança</p>
+        </header>
+        <div class="section apresentacao">
+            <h2>Apresentação</h2>
+            <p>Profissional com mais de 30 anos de experiência em TI e Cibersegurança, atuando na gestão de infraestrutura, segurança da informação e melhoria de processos corporativos. Liderou a implementação de MFA para mais de 20.000 usuários, reestruturou redes e aprimorou medidas de proteção digital. Possui diversos cursos, trazendo uma visão estratégica e proativa para a segurança dos negócios.</p>
+        </div>
+        <div class="section ilustracao">
+            <img src="Cubo.png" alt="Cubo">
+        </div>
+        <div class="section contato">
+            <h2>Competências</h2>
+            <p><strong>• Hard Skills</strong></b>
+		    🔹 Microsoft Active Directory | Azure | Exchange | Windows | Linux 🔹 Segurança da Informação | Gestão de Acessos | MFA 🔹 Redes (LAN/MAN/WAN) | Firewall NGFW | Infoblox 🔹 Monitoramento de infraestrutura (Zabbix, PRTG) 🔹 Virtualização (VMWare ESXi) | Banco de dados (SQL, MariaDB)🔹Atendimento | Suporte a cliente | Resolução de problemas (Troubleshooting)
+            <strong>• Soft Skills</strong></b>
+		    ✅ Capacidade analítica | Proatividade | Inteligência emocional ✅ Comunicação eficaz | Trabalho em equipe | Adaptabilidade
+		<p>&nbsp;</p>
+            </p>
+	    </div>
+        <div class="section descricao">
+            <h2>Informações de Contato</h2>
+            <p>E-mail: <a href="mailto:contato@sjpsonline.net">contato@sjpsonline.net</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/sergio-jose-plens-da-silva-39262537" target="_blank">https://www.linkedin.com/in/sergio-jose-plens-da-silva-39262537</a></p>
+        </div>
+    </div>
+</body>
+</html>
