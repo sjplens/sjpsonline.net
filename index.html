@@ -1,134 +1,323 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio José Plens da Silva - Cartão de Apresentação</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-        }
-        .container {
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            width: 90%;
-            max-width: 1200px;
-            height: 95%;
-            background: lightgrey;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            box-sizing: border-box;
-			font-size: 0.8em;
-        }
-        header {
-            grid-column: span 3;
-            text-align: center;
-            background-color: #0066CC;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-        }
-        header img {
-            height: 15%;
-            height: 15%;
-        }
-        header p {
-            margin: 5px 0 0 0;
-        }
-        .section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            text-align: center;
-            overflow: hidden;
-        }
-        .apresentacao {
-            grid-column: 1 / 2;
-        }
-        .ilustracao {
-            grid-column: 2 / 3;
-        }
-        .contato {
-            grid-column: 3 / 4;
-        }
-        .descricao {
-            grid-column: span 3;
-        }
-        .cta {
-            grid-column: span 3;
-            text-align: center;
-            margin-top: 10px;
-        }
-        .cta a {
-            display: inline-block;
-            padding: 10px 20px;
-            color: white;
-            background-color: #0066CC;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-        }
-        h2 {
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        p {
-            margin: 0;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sergio José Plens da Silva — Cibersegurança e infraestrutura de TI</title>
+<meta name="description" content="Analista de TI e cibersegurança com mais de 30 anos de experiência. MFA para 20.000+ usuários, segmentação de redes e ZTNA.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2230%22 fill=%22%23092C63%22/><text x=%2250%22 y=%2268%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22%237FD1D6%22 font-family=%22sans-serif%22 font-weight=%22700%22>SP</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EAF4F6; --aqua:#CBE5E9; --mid:#A9D4DB; --teal:#0E7C86; --deep:#0A4A5C; --navy:#092C63; --ink:#0B2230; --mint:#7FD1D6; --coral:#F2705C;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:clamp(1.25rem,5vw,4rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{padding-inline:var(--pad);max-width:1280px;margin-inline:auto}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.03em;line-height:1}
+h2{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:600}
+.btn{display:inline-flex;align-items:center;padding:.8rem 1.5rem;border-radius:999px;font:600 .98rem var(--body);text-decoration:none;border:2px solid var(--navy);cursor:pointer;transition:background .2s,color .2s}
+.btn.solid{background:var(--navy);color:#fff}.btn.solid:hover{background:var(--teal);border-color:var(--teal)}
+.btn.ghost{background:transparent;color:var(--navy)}.btn.ghost:hover{background:var(--navy);color:#fff}
+
+/* header */
+header{position:sticky;top:.8rem;z-index:20;margin:.8rem var(--pad) 0}
+.bar{max-width:1180px;margin-inline:auto;display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border:1px solid var(--aqua);border-radius:999px;padding:.45rem .5rem .45rem .6rem}
+.logo{display:grid;place-items:center;width:2.5rem;height:2.5rem;border-radius:50%;background:var(--navy);color:var(--mint);font:700 .95rem var(--head);text-decoration:none}
+.bar nav{display:flex;gap:1.5rem;margin-left:auto;font-size:.95rem;font-weight:500}
+.bar nav a{text-decoration:none;color:var(--deep)}.bar nav a:hover{color:var(--teal)}
+#lang{margin-left:auto;background:var(--navy);color:#fff;border:0;border-radius:999px;padding:.55rem 1.1rem;font:600 .9rem var(--body);cursor:pointer}
+.bar nav + #lang{margin-left:0}
+#lang:hover{background:var(--teal)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:2rem 3rem;align-items:center;padding-block:clamp(3rem,8vw,6.5rem) clamp(3rem,6vw,5rem)}
+.hero h1{font-weight:700;font-size:clamp(3rem,7.4vw,6.4rem);letter-spacing:-.045em;line-height:.92;color:var(--navy)}
+.hero h1 span{display:block}.hero h1 span+span{margin-left:clamp(1rem,5vw,4.5rem);color:var(--teal)}
+.role{font:600 clamp(1.2rem,2.2vw,1.6rem)/1.2 var(--head);margin-top:1.8rem;color:var(--deep)}
+.intro{max-width:30rem;margin-top:.8rem;color:#2D4A55}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.loc{margin-top:1.4rem;font-size:.92rem;color:#4A6872}
+.panel{position:relative;background:var(--navy);border-radius:2.6rem 1rem 2.6rem 1rem;padding:1.4rem;margin-top:2.5rem;box-shadow:0 30px 60px -30px rgba(9,44,99,.55);animation:rise .9s .1s both}
+.panel svg{display:block;width:100%;height:auto}
+.chip{position:absolute;left:-1.5rem;bottom:2.2rem;background:#fff;color:var(--navy);border-radius:999px;padding:.6rem 1.1rem .6rem .9rem;font:600 .9rem var(--body);box-shadow:0 12px 30px -12px rgba(9,44,99,.5);display:flex;align-items:center;gap:.55rem}
+.chip::before{content:"";width:.65rem;height:.65rem;border-radius:50%;background:var(--coral)}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* experience */
+#experiencia{background:#fff;border-radius:3rem 3rem 0 0;padding-block:clamp(3.5rem,8vw,6.5rem)}
+.sub{color:#4A6872;max-width:32rem;margin-top:1rem}
+.ribbon{position:relative;height:4.6rem;margin:2.5rem 0 3rem}
+.ribbon .b{position:absolute;top:1.4rem;height:1rem;border-radius:999px}
+.ribbon .l{position:absolute;font-size:.85rem;color:#4A6872;white-space:nowrap}
+.jobs{list-style:none;border-left:2px solid var(--mid);margin-left:.4rem}
+.job{position:relative;display:grid;grid-template-columns:11rem 1fr;gap:.6rem 2rem;padding:0 0 3rem 2.2rem}
+.job::before{content:"";position:absolute;left:-.62rem;top:.35rem;width:1rem;height:1rem;border-radius:50%;background:#fff;border:3px solid var(--teal)}
+.job:nth-child(3)::before{border-color:var(--navy)}
+.job:nth-child(even){margin-left:clamp(0rem,4vw,3.5rem)}
+.yr{font:600 1.35rem var(--head);color:var(--teal);letter-spacing:-.02em}
+.yr small{display:block;font:400 .9rem var(--body);color:#4A6872}
+.job h3{font-size:1.45rem;font-weight:600;color:var(--navy)}
+.org{margin:.3rem 0 .9rem;color:#4A6872}
+.job ul{list-style:none;max-width:44rem}
+.job li{position:relative;padding-left:1.3rem;margin-bottom:.4rem}
+.job li::before{content:"";position:absolute;left:0;top:.7em;width:.55rem;height:.55rem;border-radius:2px;background:var(--mint);transform:rotate(45deg)}
+
+/* achievements */
+#realizacoes{background:var(--aqua);padding-block:clamp(3.5rem,8vw,6.5rem)}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2.8rem}
+.tile{border-radius:1.2rem;padding:clamp(1.4rem,3vw,2.4rem);display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem}
+.tile p{font:600 clamp(1.35rem,2.4vw,2rem)/1.12 var(--head);letter-spacing:-.025em}
+.tile small{font-size:.92rem;opacity:.8}
+.t1{grid-column:1/8;grid-row:1/3;background:var(--navy);color:#fff;border-radius:2.6rem 1rem 1rem 1rem;min-height:22rem}
+.t1 p{font-size:clamp(2rem,4.4vw,3.8rem);line-height:1;color:#fff}.t1 small{color:var(--mint);opacity:1}
+.t2{grid-column:8/13;background:#fff;color:var(--navy)}
+.t3{grid-column:8/13;background:var(--teal);color:#fff;border-radius:1rem 1rem 2.6rem 1rem}
+.t4{grid-column:1/13;background:var(--mid);color:var(--ink);flex-direction:row;align-items:flex-end;flex-wrap:wrap;gap:1rem 3rem}
+.t4 p{max-width:40rem}
+
+/* tools */
+#ferramentas{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.tools{display:grid;grid-template-columns:.8fr 1.4fr;gap:3rem}
+.grp{padding-block:1.2rem;border-bottom:1px solid var(--mid)}
+.grp h3{font-size:1.1rem;font-weight:600;color:var(--teal);margin-bottom:.7rem;letter-spacing:-.01em}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.tags span{background:#fff;border:1px solid var(--mid);border-radius:999px;padding:.25rem .85rem;font-size:.92rem}
+
+/* education */
+#formacao{background:var(--navy);color:#fff;border-radius:3rem 3rem 0 0;padding-block:clamp(3.5rem,8vw,6.5rem)}
+#formacao .sub{color:#B9D3E6}
+#formacao :focus-visible{outline-color:var(--mint)}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:3rem 5rem;margin-top:3rem}
+.deg{margin-bottom:2rem}.deg b{display:block;font:600 1.5rem/1.2 var(--head);letter-spacing:-.02em}.deg span{color:var(--mint)}
+.courses{list-style:none;font-size:.98rem}
+.courses li{padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.18);display:flex;justify-content:space-between;gap:1rem}
+.courses em{font-style:normal;color:#B9D3E6;white-space:nowrap}
+
+/* contact */
+#contato{background:var(--mint);color:var(--navy);padding-block:clamp(3.5rem,8vw,6rem) 2rem;border-radius:3rem 3rem 0 0}
+#contato h2{max-width:46rem}
+.mail{display:inline-block;margin-top:2rem;background:var(--navy);color:#fff;border-radius:999px;padding:1rem 2rem;font:600 clamp(1.1rem,3.2vw,1.8rem) var(--head);letter-spacing:-.02em;text-decoration:none;word-break:break-all}
+.mail:hover{background:var(--deep)}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-top:4rem;font-size:.9rem;color:var(--deep)}
+
+@media (max-width:860px){
+  .bar nav{display:none}
+  .hero{grid-template-columns:1fr}.panel{margin-top:1rem}.chip{left:.8rem}
+  .job{grid-template-columns:1fr;padding-left:1.6rem}.job:nth-child(even){margin-left:0}
+  .bento{display:flex;flex-direction:column}.t1{min-height:0}
+  .tools,.edu{grid-template-columns:1fr}
+  .courses li{flex-direction:column;gap:0}
+  #experiencia,#formacao,#contato{border-radius:2rem 2rem 0 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.panel{animation:none}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
+<header>
+  <div class="bar">
+    <a class="logo" href="#" aria-label="Início">SP</a>
+    <nav aria-label="Seções">
+      <a href="#experiencia" data-en="Experience">Trajetória</a>
+      <a href="#realizacoes" data-en="Achievements">Realizações</a>
+      <a href="#ferramentas" data-en="Tools">Ferramentas</a>
+      <a href="#formacao" data-en="Education">Formação</a>
+      <a href="#contato" data-en="Contact">Contato</a>
+    </nav>
+    <button id="lang" type="button" aria-label="Switch to English">EN</button>
+  </div>
+</header>
 
-            <h1>Sergio José Plens da Silva</h1>
-            <p>Analista de TI  | Cibersegurança</p>
-        </header>
-        <div class="section apresentacao">
-            <h2>Apresentação</h2>
-            <p>Profissional com mais de 30 anos de experiência em TI e Cibersegurança, atuando na gestão de infraestrutura, segurança da informação e melhoria de processos corporativos. Liderou a implementação de MFA para mais de 20.000 usuários, reestruturou redes e aprimorou medidas de proteção digital. Possui diversos cursos, trazendo uma visão estratégica e proativa para a segurança dos negócios.</p>
-        </div>
-        <div class="section ilustracao">
-            <img src="Cubo.png" alt="Cubo">
-        </div>
-        <div class="section contato">
-            <h2>Competências</h2>
-            <p><strong>• Hard Skills</strong></b>
-		    🔹 Microsoft Active Directory | Azure | Exchange | Windows | Linux 🔹 Segurança da Informação | Gestão de Acessos | MFA 🔹 Redes (LAN/MAN/WAN) | Firewall NGFW | Infoblox 🔹 Monitoramento de infraestrutura (Zabbix, PRTG) 🔹 Virtualização (VMWare ESXi) | Banco de dados (SQL, MariaDB)🔹Atendimento | Suporte a cliente | Resolução de problemas (Troubleshooting)
-            <strong>• Soft Skills</strong></b>
-		    ✅ Capacidade analítica | Proatividade | Inteligência emocional ✅ Comunicação eficaz | Trabalho em equipe | Adaptabilidade
-		<p>&nbsp;</p>
-            </p>
-	    </div>
-        <div class="section descricao">
-            <h2>Informações de Contato</h2>
-            <p>E-mail: <a href="mailto:contato@sjpsonline.net">contato@sjpsonline.net</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/sergio-jose-plens-da-silva-39262537" target="_blank">https://www.linkedin.com/in/sergio-jose-plens-da-silva-39262537</a></p>
-        </div>
+<main>
+<div class="wrap hero">
+  <div>
+    <h1><span>Sergio José</span><span>Plens da Silva</span></h1>
+    <p class="role" data-en="IT and cybersecurity analyst">Analista de TI e cibersegurança</p>
+    <p class="intro" data-en="Over 30 years looking after critical infrastructure, now focused on protecting it: access, networks, incidents and policies.">Mais de 30 anos cuidando de infraestrutura crítica, e agora dedicado a protegê-la: acessos, redes, incidentes e políticas.</p>
+    <div class="cta">
+      <a class="btn solid" href="#experiencia" data-en="See experience">Ver trajetória</a>
+      <a class="btn ghost" href="mailto:sjplens@gmail.com" data-en="Send an email">Enviar e-mail</a>
     </div>
+    <p class="loc" data-en="Registro, São Paulo, Brazil">Registro, São Paulo, Brasil</p>
+  </div>
+  <div class="panel">
+    <svg viewBox="0 0 440 500" role="img" aria-label="Diagrama de rede segmentada em Internet, DMZ e rede interna">
+      <g font-family="Instrument Sans,sans-serif" font-size="14" fill="#B9D3E6">
+        <rect x="20" y="20" width="400" height="120" rx="22" fill="rgba(255,255,255,.05)" stroke="#7FD1D6" stroke-opacity=".5" stroke-dasharray="5 6"/>
+        <text x="42" y="50" data-en="Internet">Internet</text>
+        <rect x="150" y="70" width="140" height="44" rx="12" fill="rgba(127,209,214,.14)" stroke="#7FD1D6"/>
+        <text x="220" y="97" text-anchor="middle" fill="#fff">Cloudflare ZTNA</text>
+        <rect x="60" y="190" width="320" height="120" rx="22" fill="rgba(255,255,255,.08)" stroke="#7FD1D6" stroke-opacity=".7"/>
+        <text x="82" y="220">DMZ</text>
+        <rect x="100" y="240" width="110" height="40" rx="10" fill="rgba(127,209,214,.14)" stroke="#7FD1D6"/><text x="155" y="265" text-anchor="middle" fill="#fff">Web</text>
+        <rect x="230" y="240" width="110" height="40" rx="10" fill="rgba(127,209,214,.14)" stroke="#7FD1D6"/><text x="285" y="265" text-anchor="middle" fill="#fff">IPS</text>
+        <rect x="100" y="360" width="240" height="120" rx="22" fill="#7FD1D6"/>
+        <text x="122" y="390" fill="#092C63" font-weight="600" data-en="Internal">Interna</text>
+        <rect x="122" y="412" width="62" height="40" rx="10" fill="#092C63"/><rect x="196" y="412" width="62" height="40" rx="10" fill="#092C63"/><rect x="270" y="412" width="50" height="40" rx="10" fill="#092C63"/>
+        <path d="M220 114 V190 M220 310 V360" stroke="#fff" stroke-width="2" fill="none"/>
+        <rect x="170" y="140" width="100" height="30" rx="15" fill="#F2705C"/><text x="220" y="160" text-anchor="middle" fill="#fff" font-weight="600">MFA</text>
+        <rect x="150" y="318" width="140" height="30" rx="15" fill="#fff"/><text x="220" y="338" text-anchor="middle" fill="#092C63" font-weight="600">Firewall NGFW</text>
+      </g>
+    </svg>
+    <div class="chip" data-en="MFA for 20,000+ users">MFA para 20.000+ usuários</div>
+  </div>
+</div>
+
+<section id="experiencia">
+  <div class="wrap">
+    <h2 data-en="Experience">Trajetória</h2>
+    <p class="sub" data-en="Thirty-two years at SABESP, followed by consulting work in security and networks.">Trinta e dois anos na SABESP, e depois consultorias em segurança e redes.</p>
+    <div class="ribbon" role="img" aria-label="1991–2026">
+      <span class="l" style="left:0;top:0">1991</span><span class="l" style="right:0;top:0">2026</span>
+      <div class="b" style="left:2.9%;width:91.4%;background:var(--navy)"></div>
+      <div class="b" style="left:94.3%;width:2.9%;background:var(--teal)"></div>
+      <div class="b" style="left:97.1%;width:2.9%;background:var(--mint)"></div>
+      <span class="l" style="left:2.9%;top:2.9rem" data-en="SABESP, 1992 to 2024">SABESP, 1992 a 2024</span>
+    </div>
+    <ol class="jobs">
+      <li class="job">
+        <div class="yr" data-en="2025 to 2026">2025 a 2026</div>
+        <div>
+          <h3 data-en="Infrastructure consulting and administration">Consultoria e administração de infraestrutura</h3>
+          <p class="org" data-en="Sulpave Sul Paulista de Veículos, contractor">Sulpave Sul Paulista de Veículos, como PJ</p>
+          <ul>
+            <li data-en="Restructured the network with segmentation and HPE switch provisioning.">Reestruturei a rede, com segmentação e provisionamento de switches HPE.</li>
+            <li data-en="Organized and secured the infrastructure with GLPI (inventory), Wazuh (security analysis) and Zabbix (monitoring).">Organizei e protegi a infraestrutura com GLPI (inventário), Wazuh (análise de segurança) e Zabbix (monitoramento).</li>
+            <li data-en="Managed the pfSense firewall.">Gerenciei o firewall pfSense.</li>
+            <li data-en="Supported desktop IT, physical security, CRM, ERP and GM systems, plus data networks, landline and mobile telephony.">Dei suporte a microinformática, segurança patrimonial, CRM, ERP e sistemas da GM, além de dados, telefonia fixa e móvel.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="yr">2025<small data-en="150 hours">150 horas</small></div>
+        <div>
+          <h3 data-en="Infrastructure and security project consulting">Consultoria em projeto de infraestrutura e segurança</h3>
+          <p class="org">LocalSIG Inteligência Geográfica</p>
+          <ul>
+            <li data-en="Redesigned the network into three zones: Internet, Internal and DMZ.">Redesenhei a rede em três zonas: Internet, Interna e DMZ.</li>
+            <li data-en="Implemented Zero Trust Network Access (ZTNA) on Cloudflare.">Implementei Zero Trust Network Access (ZTNA) na Cloudflare.</li>
+            <li data-en="Provisioned an on-premises NGFW firewall and a Zabbix server on AWS.">Provisionei um firewall NGFW on premise e um servidor Zabbix na AWS.</li>
+            <li data-en="Configured content filters and IPS.">Configurei filtros de conteúdo e IPS.</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="yr">2024</div>
+        <div>
+          <h3 data-en="Management analyst, cybersecurity">Analista de gestão, cibersegurança</h3>
+          <p class="org">SABESP</p>
+          <ul>
+            <li data-en="Managed the MFA project for more than 20,000 users.">Gerenciei o projeto de MFA para mais de 20.000 usuários.</li>
+            <li data-en="Analyzed incidents and reviewed IT security policies.">Analisei incidentes e revisei políticas de segurança de TI.</li>
+            <li data-en="Assessed the security of corporate platforms such as Azure and Office 365.">Avaliei a segurança de plataformas corporativas, como Azure e Office 365.</li>
+            <li data-en="Worked with EDR and DLP (Broadcom) and SIEM (Microfocus/NetIQ).">Trabalhei com EDR e DLP (Broadcom) e SIEM (Microfocus/NetIQ).</li>
+          </ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="yr" data-en="1992 to 2024">1992 a 2024</div>
+        <div>
+          <h3 data-en="Management analyst, IT management">Analista de gestão, gestão de TI</h3>
+          <p class="org">SABESP</p>
+          <ul>
+            <li data-en="Coordinated IT across 23 municipalities, keeping critical infrastructure running.">Coordenei a TI em 23 municípios, garantindo a infraestrutura crítica.</li>
+            <li data-en="Deployed a regional datacenter and communication networks.">Implantei um datacenter regional e redes de comunicação.</li>
+            <li data-en="Segregated IT and OT networks, strengthening cybersecurity.">Segreguei as redes de TI e de TO, fortalecendo a segurança cibernética.</li>
+            <li data-en="Administered servers, databases and storage, with monitoring in Zabbix, PRTG and OPSView.">Administrei servidores, bancos de dados e storages, com monitoramento em Zabbix, PRTG e OPSView.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="realizacoes">
+  <div class="wrap">
+    <h2 data-en="Achievements">Realizações</h2>
+    <div class="bento">
+      <div class="tile t1"><p data-en="An MFA project for more than 20,000 users.">Um projeto de MFA para mais de 20.000 usuários.</p><small data-en="SABESP, 2024">SABESP, 2024</small></div>
+      <div class="tile t2"><p data-en="IT coordinated across 23 municipalities, with a regional datacenter deployed.">TI coordenada em 23 municípios, com datacenter regional implantado.</p><small data-en="SABESP, 1992 to 2024">SABESP, 1992 a 2024</small></div>
+      <div class="tile t3"><p data-en="A network split into Internet, Internal and DMZ, with Zero Trust access on Cloudflare.">Uma rede dividida em Internet, Interna e DMZ, com acesso Zero Trust na Cloudflare.</p><small>LocalSIG, 2025</small></div>
+      <div class="tile t4"><p data-en="IT and OT networks kept separate, so critical infrastructure became safer.">Redes de TI e TO separadas, para que a infraestrutura crítica ficasse mais segura.</p><small>SABESP</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="ferramentas">
+  <div class="wrap tools">
+    <div>
+      <h2 data-en="Tools">Ferramentas</h2>
+      <p class="sub" data-en="From datacenter to cloud, the same question: what is running, and who can reach it.">Do datacenter à nuvem, a mesma pergunta: o que está rodando e quem pode acessar.</p>
+    </div>
+    <div>
+      <div class="grp"><h3 data-en="Infrastructure and networks">Infraestrutura e redes</h3><div class="tags"><span>Active Directory</span><span>Azure</span><span>Exchange</span><span>Windows</span><span>Linux</span><span>NGFW</span><span>pfSense</span><span>Cloudflare</span><span>Infoblox</span><span>LAN, MAN, WAN</span><span>GLPI</span></div></div>
+      <div class="grp"><h3 data-en="Information security">Segurança da informação</h3><div class="tags"><span data-en="Access management">Gestão de acessos</span><span>MFA</span><span>SIEM</span><span>DLP</span><span>EDR</span><span>ZTNA</span><span>Wazuh</span></div></div>
+      <div class="grp"><h3 data-en="Monitoring">Monitoramento</h3><div class="tags"><span>Zabbix</span><span>PRTG</span><span>OPSView</span></div></div>
+      <div class="grp"><h3 data-en="Virtualization and databases">Virtualização e bancos de dados</h3><div class="tags"><span>VMware ESXi</span><span>Microsoft SQL Server</span><span>MariaDB</span></div></div>
+      <div class="grp"><h3 data-en="Working with people">Em equipe</h3><div class="tags"><span data-en="Analytical thinking">Capacidade analítica</span><span data-en="Proactivity">Proatividade</span><span data-en="Emotional intelligence">Inteligência emocional</span><span data-en="Clear communication">Comunicação eficaz</span><span data-en="Adaptability">Adaptabilidade</span><span data-en="Troubleshooting">Resolução de problemas</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="formacao">
+  <div class="wrap">
+    <h2 data-en="Education and courses">Formação e cursos</h2>
+    <p class="sub" data-en="Degree in 1991, postgraduate in 2021, and steady study in between.">Graduação em 1991, pós-graduação em 2021, e estudo contínuo no meio.</p>
+    <div class="edu">
+      <div>
+        <div class="deg"><b data-en="Postgraduate degree in Cybersecurity and Digital Business Protection">Pós-graduação em Cibersegurança e Proteção Digital de Negócios</b><span>FIA Business School, 2021</span></div>
+        <div class="deg"><b data-en="Degree in Data Processing Technology">Tecnologia em Processamento de Dados</b><span>FATEC/UNESP, 1991</span></div>
+        <p class="sub" data-en="English: intermediate.">Inglês intermediário.</p>
+      </div>
+      <ul class="courses">
+        <li>CompTIA Security+ SY0-701 <em>Udemy</em></li>
+        <li>AI Mastery in OT Security: Securing ICS/OT Infrastructures <em>EC-Council</em></li>
+        <li>Security Automation with Ansible <em>EC-Council</em></li>
+        <li>Fortinet Certified Fundamentals in Cybersecurity <em>Fortinet</em></li>
+        <li>Lean Six Sigma Yellow Belt <em>FM2S</em></li>
+        <li>GDPR Compliance: Essential Training <em>LinkedIn</em></li>
+        <li><span data-en="Cloud Computing: Basics">Computação em Nuvem: Noções Básicas</span> <em>LinkedIn</em></li>
+        <li><span data-en="Scrum Fundamentals">Fundamentos do Scrum</span> <em>LinkedIn</em></li>
+        <li><span data-en="Problem-Solving Techniques">Técnicas de Resolução de Problemas</span> <em>LinkedIn</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<section id="contato">
+  <div class="wrap">
+    <h2 data-en="Let’s talk about the security of your infrastructure.">Vamos conversar sobre a segurança da sua infraestrutura.</h2>
+    <a class="mail" href="mailto:sjplens@gmail.com">sjplens@gmail.com</a>
+    <footer><span>Sergio José Plens da Silva, Registro, SP</span><span data-en="Résumé updated June 2026">Currículo atualizado em junho de 2026</span></footer>
+  </div>
+</section>
+
+<script>
+(function(){
+  var btn=document.getElementById('lang'),els=document.querySelectorAll('[data-en]'),
+      meta=document.querySelector('meta[name=description]'),
+      T={pt:{t:document.title,d:meta.content},en:{t:'Sergio José Plens da Silva — Cybersecurity and IT infrastructure',d:'IT and cybersecurity analyst with 30+ years of experience. MFA for 20,000+ users, network segmentation and ZTNA.'}};
+  els.forEach(function(e){e.setAttribute('data-pt',e.innerHTML)});
+  function set(l){
+    els.forEach(function(e){e.innerHTML=e.getAttribute('data-'+l)});
+    document.documentElement.lang=l==='en'?'en':'pt-BR';
+    document.title=T[l].t;meta.content=T[l].d;
+    btn.textContent=l==='en'?'PT':'EN';
+    btn.setAttribute('aria-label',l==='en'?'Mudar para português':'Switch to English');
+    try{localStorage.setItem('lang',l)}catch(x){}
+  }
+  btn.addEventListener('click',function(){set(document.documentElement.lang==='en'?'pt':'en')});
+  var saved=null;try{saved=localStorage.getItem('lang')}catch(x){}
+  if(saved==='en'||(!saved&&(navigator.language||'').toLowerCase().indexOf('pt')!==0))set('en');
+})();
+</script>
 </body>
 </html>
